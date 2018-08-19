@@ -52,6 +52,7 @@ import app.metatron.discovery.domain.workbook.configurations.datasource.DataSour
 import app.metatron.discovery.domain.workbook.configurations.datasource.DefaultDataSource;
 import app.metatron.discovery.domain.workbook.configurations.datasource.JoinMapping;
 import app.metatron.discovery.domain.workbook.configurations.datasource.MappingDataSource;
+import app.metatron.discovery.domain.workbook.configurations.field.CountField;
 import app.metatron.discovery.domain.workbook.configurations.field.DimensionField;
 import app.metatron.discovery.domain.workbook.configurations.field.ExpressionField;
 import app.metatron.discovery.domain.workbook.configurations.field.Field;
@@ -1350,13 +1351,19 @@ public class DataQueryRestIntegrationTest extends AbstractRestIntegrationTest {
     List<UserDefinedField> userDefinedFields = Lists.newArrayList();
     userDefinedFields.add(new ExpressionField("countof", "countof(\"State\")", "measure", null, true));
 
-    //    limit.setSort(Lists.newArrayList(new Sort("City", "asc")));
+    // Case 7. One dimension value per row shelf, set fake count type field
+    Pivot pivot7 = new Pivot();
+//    pivot7.setColumns(Lists.newArrayList(new DimensionField("Category")));
+    pivot7.setRows(Lists.newArrayList(new DimensionField("Category")));
+    pivot7.setAggregations(Lists.newArrayList(
+        new CountField("CountFieldAlias", null)
+    ));
 
-    SearchQueryRequest request = new SearchQueryRequest(dataSource1, filters, pivot1, limit);
+    SearchQueryRequest request = new SearchQueryRequest(dataSource1, filters, pivot7, limit);
     ChartResultFormat format = new ChartResultFormat("grid");
     format.addOptions("isOriginal", false);
     format.addOptions("addMinMax", true);
-    format.addOptions("columnAggregation", "SUM");
+//    format.addOptions("columnAggregation", "SUM");
     request.setResultFormat(format);
     request.setUserFields(userDefinedFields);
 

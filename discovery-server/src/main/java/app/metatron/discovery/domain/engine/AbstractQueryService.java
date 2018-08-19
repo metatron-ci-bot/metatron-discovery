@@ -27,6 +27,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import app.metatron.discovery.domain.datasource.DataSource;
+import app.metatron.discovery.domain.workbook.configurations.field.CountField;
 import app.metatron.discovery.domain.workbook.configurations.field.ExpressionField;
 import app.metatron.discovery.domain.workbook.configurations.field.Field;
 import app.metatron.discovery.domain.workbook.configurations.field.MeasureField;
@@ -112,10 +113,15 @@ public abstract class AbstractQueryService implements QueryService {
     Map<String, UserDefinedField> userFieldMap = userFields.stream()
                                                            .collect(Collectors.toMap(UserDefinedField::getName, f -> f));
 
-    // check aggregation type
+    // Check aggregation type
     for (app.metatron.discovery.domain.workbook.configurations.field.Field projection : projections) {
+
       if (!(projection instanceof MeasureField)) {
         continue;
+      }
+
+      if (projection instanceof CountField) {
+        return false;
       }
 
       MeasureField measureField = (MeasureField) projection;
@@ -127,7 +133,7 @@ public abstract class AbstractQueryService implements QueryService {
         return false;
       }
 
-      // GroupBy 조건 2. aggreationType 이 null 그리고 NONE 이 아닌경우
+      // GroupBy 조건 2. AggreationType 이 null 그리고 NONE 이 아닌경우
       if (measureField.getAggregationType() != null && measureField.getAggregationType() != NONE) {
         return false;
       }

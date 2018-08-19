@@ -46,6 +46,7 @@ import app.metatron.discovery.domain.workbook.configurations.Sort;
 import app.metatron.discovery.domain.workbook.configurations.analysis.Analysis;
 import app.metatron.discovery.domain.workbook.configurations.analysis.PredictionAnalysis;
 import app.metatron.discovery.domain.workbook.configurations.datasource.MappingDataSource;
+import app.metatron.discovery.domain.workbook.configurations.field.CountField;
 import app.metatron.discovery.domain.workbook.configurations.field.DimensionField;
 import app.metatron.discovery.domain.workbook.configurations.field.ExpressionField;
 import app.metatron.discovery.domain.workbook.configurations.field.Field;
@@ -289,6 +290,9 @@ public class GroupByQueryBuilder extends AbstractQueryBuilder {
         } else {
           addAggregationFunction((MeasureField) field);
         }
+      } else if (field instanceof CountField) {
+        // Directly set count aggregator.
+        aggregations.add(new CountAggregation(aliasName));
       } else if (field instanceof TimestampField) {
 
         TimestampField timestampField = (TimestampField) field;

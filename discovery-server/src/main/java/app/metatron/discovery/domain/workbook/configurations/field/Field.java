@@ -32,6 +32,7 @@ import app.metatron.discovery.domain.workbook.configurations.format.FieldFormat;
         @JsonSubTypes.Type(value = DimensionField.class, name = "dimension"),
         @JsonSubTypes.Type(value = DimensionGroupField.class, name = "group"),
         @JsonSubTypes.Type(value = MeasureField.class, name = "measure"),
+        @JsonSubTypes.Type(value = CountField.class, name = "count"),
         @JsonSubTypes.Type(value = TimestampField.class, name = "timestamp"),
         @JsonSubTypes.Type(value = MapField.class, name = "user_map"),
         @JsonSubTypes.Type(value = ExpressionField.class, name = "user_expr"),

@@ -43,6 +43,7 @@ import app.metatron.discovery.domain.workbook.configurations.datasource.DataSour
 import app.metatron.discovery.domain.workbook.configurations.datasource.DefaultDataSource;
 import app.metatron.discovery.domain.workbook.configurations.datasource.JoinMapping;
 import app.metatron.discovery.domain.workbook.configurations.datasource.MappingDataSource;
+import app.metatron.discovery.domain.workbook.configurations.field.CountField;
 import app.metatron.discovery.domain.workbook.configurations.field.ExpressionField;
 import app.metatron.discovery.domain.workbook.configurations.field.Field;
 import app.metatron.discovery.domain.workbook.configurations.field.MapField;
@@ -200,9 +201,13 @@ public abstract class AbstractQueryBuilder {
       mappingDataSource.getJoins().forEach(joinMapping -> visitJoinMapping(joinMapping));
     }
 
+    // add all datasource field name
     validColumnNames.addAll(metaFieldMap.keySet());
 
-    // QueryService 진입시 부여 받은 QueryId 주입
+    // add default name of count field
+    validColumnNames.add(CountField.DEFAULT_COUNT_FIELD_NAME);
+
+    // set queryId provided when entering QueryService
     queryId = CommonLocalVariable.getQueryId();
 
   }
