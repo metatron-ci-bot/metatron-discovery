@@ -19,13 +19,13 @@ metatron discovery is a data discovery web application which supports end-to-end
 metatron provides:
 - Interactive dashboards with 16 types of WSIWYG charts.
 - SQL based data exploration.
-- Connections with advanced analytics tools like [Apache Zeppline](https://zeppelin.apache.org/).
+- Connections with advanced analytics tools like [Apache Zepplin](https://zeppelin.apache.org/).
 - Metadata management.
 - Data source creation from local, existing DBs, HIVE, and Kafka streams.
 - GUI based data preparation.
 - Monitoring tools for logs, jobs, and lineages of datasets.
 - Administrations for users and workspaces for high ganularity security model.
-- [Customized Druid](https://metatron.app/index.php/2018/06/15/skt-druid-features/) allows for metatron not only staying blazing-fast while slicing and dicing large, but also overcoming Druid weaknesses.
+- [Metatron distributed Druid](https://metatron.app/index.php/2018/06/15/skt-druid-features/) allows for metatron not only staying blazing-fast while slicing and dicing large, but also overcoming Druid weaknesses.
 
 Screenshots
 ------------------
