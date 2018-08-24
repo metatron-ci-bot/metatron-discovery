@@ -3,7 +3,7 @@ Metatron Discovery
 
 <img title="logo-metatron" src="https://user-images.githubusercontent.com/6300003/44013820-f7647c96-9f02-11e8-8066-1c97f8b1662c.png" width="600px">
 
-**metatron discovery** is a self-service solution for big data discovery.
+**Metatron Discovery** is a self-service solution for big data discovery.
 To learn more about metatron discovery, visit our web site [https://metatron.app](https://metatron.app)
 
 Strengths
@@ -14,9 +14,9 @@ Strengths
 
 Features
 ------------------
-metatron discovery is a data discovery web application which supports end-to-end features from data management to analytics.
+Metatron Discovery is a data discovery web application which supports end-to-end features from data management to analytics.
 
-metatron provides:
+Metatron provides:
 - Interactive dashboards with 16 types of WSIWYG charts.
 - SQL based data exploration.
 - Connections with advanced analytics tools like [Apache Zepplin](https://zeppelin.apache.org/).
@@ -78,7 +78,14 @@ Running options are provided as well.
 <pre><code>$ bin/metatron.sh [--config=directory] [--init] [--management] [--debug=port] {start|stop|restart|status}</code></pre>
 To access Metatron Discovery, go to [http://localhost:8180](http://localhost:8180). (The default admin user account is provided as ID: admin, PW: admin.)
 
+Problems & Suggestions
+----------------------------
+If you've found a bug or want to request a feature, please create a [GitHub Issue](https://github.com/metatron-app/metatron-discovery). Please check to make sure someone else hasn't already created an issue for the same topic.
+
+Question
+----------------------------
+Need help using Metatron Discovery? Ask away on our [Metatron Discovery User Group](https://groups.google.com/forum/#!forum/metatron-discovery) and a fellow community member or our engineer will be glad to help you out.
+
 License
 ----------------------------
-metatron-discovery is available under the Apache License V2.
-
+Metatron Discovery is available under the Apache License V2.
