@@ -78,14 +78,14 @@ Running options are provided as well.
 <pre><code>$ bin/metatron.sh [--config=directory] [--init] [--management] [--debug=port] {start|stop|restart|status}</code></pre>
 To access Metatron Discovery, go to [http://localhost:8180](http://localhost:8180). (The default admin user account is provided as ID: admin, PW: admin.)
 
-Problems & Suggestions
-----------------------------
-If you've found a bug or want to request a feature, please create a [GitHub Issue](https://github.com/metatron-app/metatron-discovery). Please check to make sure someone else hasn't already created an issue for the same topic.
-
-Question
-----------------------------
-Need help using Metatron Discovery? Ask away on our [Metatron Discovery User Group](https://groups.google.com/forum/#!forum/metatron-discovery) and a fellow community member or our engineer will be glad to help you out.
-
 License
 ----------------------------
 Metatron Discovery is available under the Apache License V2.
+
+Problems & Suggestions
+----------------------------
+This project welcomes contributions and suggestions. If you encounter any bugs or want to request new features, feel free to open an [GitHub Issue](https://github.com/metatron-app/metatron-discovery) in the repo so that the community can find resolutions for it. Although, please check before you raise an issue. That is, please make sure someone else hasn’t already created an issue for the same topic.
+
+Question
+----------------------------
+Need help using Metatron Discovery? Ask away on our [Metatron Discovery User Group](https://groups.google.com/forum/#!forum/metatron-discovery)! Our fellow community member or our engineers will be glad to help you out! Or maybe you might want to check out our user manual on our website as well.
